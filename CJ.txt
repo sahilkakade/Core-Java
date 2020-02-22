@@ -14,7 +14,8 @@ return num1*facto(num1-1);
 }
 }
 }
-class testfact{
+class testfact
+{
 public static void main(String args[])
 {
 int num,i,fact;
@@ -55,12 +56,14 @@ System.out.println("Number should be graeter than nine");
 System.out.print("Num=");
 num=sc.nextInt();
 }
-if(num<9){
+if(num<9)
+{
 rev_num=num;
 }
 else
 {
-while(num>0){
+while(num>0)
+{
 rem=num%10;
 rev_num=rev_num*10+rem;
 num=num/10;
@@ -81,10 +84,12 @@ Scanner sc=new Scanner(System.in);
 System.out.println("Enter the limite for the fibbonaci series");
 System.out.print("limite=");
 int limit=sc.nextInt();
-while(limit<=0){
+while(limit<=0)
+{
 System.out.println("Limite should be graeter than 0");
 System.out.print("limit=");
-limit=sc.nextInt();}
+limit=sc.nextInt();
+}
 int a0,a1,temp,a2;
 a0=0;
 a1=1;
@@ -96,7 +101,8 @@ else
 {
 System.out.println(a0+" ");
 System.out.println(a1+" ");
-while(limit-2>0){
+while(limit-2>0)
+{
 a2=a1+a0;
 a0=a1;
 a1=a2;
@@ -118,12 +124,15 @@ Scanner sc=new Scanner(System.in);
 int num,i;
 System.out.println("Enter the number of which multiplication table do want?");
 num=sc.nextInt();
-while(num<=0){
+while(num<=0)
+{
 System.out.println("For table enter any posstive integer");
 System.out.println("num=");
 num=sc.nextInt();}
+
 System.out.println("****Multiplication table of "+num);
-for(i=1;i<=10;i++){
+for(i=1;i<=10;i++)
+{
 System.out.println(num+"*"+i+"="+(num*i));
 }
 }
@@ -145,12 +154,14 @@ while(num<=0)
 {
 System.out.println("Enter the numer that should be graeter than zero");
 System.out.println("num=");
-num=sc.nextInt();}
+num=sc.nextInt();
+}
 if(num==1)
 {
 System.out.println("It is neither prime nor non-prime");
 }
-else{
+else
+{
 for(i=2;i<num;i++)
 {
 if(num%i==0)
