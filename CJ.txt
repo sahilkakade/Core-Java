@@ -343,3 +343,419 @@ return y*y;
 }
 
 
+𝗤𝟭𝟭. 𝗠𝗲𝘁𝗵𝗼𝗱 𝗼𝘃𝗲𝗿𝗿𝗶𝗱𝗶𝗻𝗴 𝗲𝘅𝗮𝗺𝗽𝗹𝗲
+class A
+{
+int a,b;
+public A(int x,int y)
+{
+a=x;
+b=y;
+}
+public void add()
+{
+System.out.println("calling add function from the super class");
+System.out.println("Addition of the numbers "+a+" and "+b+" is"+(a+b));
+}
+}
+class B extends A{
+int c;
+public B(int x,int y,int z){
+super(x,y);
+c=z;}
+public void add(){
+System.out.println("calling add function from the sub class");
+System.out.println("Addition of the numbers "+a+" ,"+b+" and"+c+" is"+(a+b+c));
+}
+}
+class overridedemo{
+public static void main(String ar[]){
+A obj= new A(3,4);
+obj.add();
+B obj1=new B(4,5,6);
+obj1.add();
+}
+}
+
+
+𝗤𝟭𝟮. 𝗗𝗲𝗺𝗼 𝗼𝗳 𝗰𝗼𝗻𝘀𝘁𝗿𝘂𝗰𝘁𝗼𝗿 𝗽𝗿𝗼𝗴𝗿𝗮𝗺.
+class area
+{
+double rad;
+double ar;
+public area(double r)
+{
+rad=r;
+}
+public double func_area(){
+ar=Math.PI*rad*rad;
+return ar;
+}
+}
+class cons_demo{
+public static void main(String ar[]){
+area a=new area(1);
+double area1=a.func_area();
+System.out.println("area of the circle is "+area1);
+}
+}
+
+
+𝗤𝟭𝟯. 𝗣𝗿𝗼𝗴𝗿𝗮𝗺 𝗶𝗺𝗽𝗹𝗲𝗺𝗲𝗻𝘁𝗶𝗻𝗴 𝗶𝗻𝗵𝗲𝗿𝗶𝘁𝗮𝗻𝗰𝗲
+import java.util.*;
+class superclass
+{
+int a,b;
+Scanner sc=new Scanner(System.in);
+public void get()
+{
+System.out.println("Enter any two integer values to be added");
+a=sc.nextInt();
+b=sc.nextInt();
+}
+}
+class sub extends superclass{
+int c;
+public void add(){
+System.out.println("a= "+a+", b="+b+"\na+b="+(a+b));
+}
+}
+class inhert_demo{
+public static void main(String ar[]){
+sub obj=new sub();
+obj.get();
+obj.add();
+}
+}
+
+𝗤𝟭𝟰. 𝗠𝗲𝘁𝗵𝗼𝗱 𝗼𝘃𝗲𝗿𝗿𝗶𝗱𝗶𝗱𝗻𝗴 𝗲𝘅𝗮𝗺𝗽𝗹𝗲𝘀.
+class A
+{
+public void add(int a,int b)
+{
+System.out.println("Add fuction for integers values");
+System.out.println("a="+a+", b= "+b+"\n a+b="+(a+b));
+}
+public void add(float a,float b){
+System.out.println("Add fuction for float values");
+System.out.println("a="+a+", b= "+b+"\n a+b="+(a+b));
+}
+}
+class overloaddemo{
+public static void main(String ar[]){
+A a=new A();
+a.add(3,4);
+a.add(3.5f,4.5f);
+}
+}
+
+
+𝗤𝟭𝟱. 𝗘𝘅𝗮𝗺𝗽𝗹𝗲 𝗼𝗳 𝘀𝘁𝗿𝗶𝗻𝗴 𝗳𝘂𝗻𝗰𝘁𝗶𝗼𝗻.
+import java.io.*;
+class strdemo
+{
+public static void main(String args[])
+{
+String st1=new String("DURGESH");
+String st2=new String("Durgesh");
+String st3=new String("Chaubey");
+int i=st1.length();
+System.out.println("Length of the string st1\t"+st1+" is  "+i);
+System.out.println("The string st1\t"+st1+" and st2\t"+st2+" are equal->"+st1.equals(st2));
+System.out.println("The string st1\t"+st1+" and st2\t"+st2+" are equal ignoring the case->"+st1.equalsIgnoreCase(st2));
+String st4=st1.toLowerCase();
+System.out.println(st2+" after converting case ->"+st4);
+System.out.println("The character at specified index of string st1\t"+st1+"  -> "+st1.charAt(3));
+System.out.println("The string concatenation\t"+st1.concat(st3));
+}
+}
+
+
+𝗤𝟭𝟲. 𝗘𝘅𝗮𝗺𝗽𝗹𝗲 𝗼𝗳 𝗰𝗼𝗻𝘀𝘁𝗿𝘂𝗰𝘁𝗼𝗿
+import java.util.*;
+class superclass
+{
+int a;
+int b,c;
+Scanner sc=new Scanner(System.in);
+superclass()
+{
+System.out.println("Assigning values by non-parametrized constructor");
+System.out.println("Enter the values");
+System.out.print("a=  ");
+a=sc.nextInt();
+System.out.print("b=  ");
+b=sc.nextInt();
+}
+public void addition()
+{
+System.out.println("a= "+a);
+System.out.println("b= "+b);
+c=a+b;
+System.out.println("a+b= "+c);
+}}
+class cons_demo3{
+public static void main(String ar[])
+{
+superclass s1=new superclass();
+s1.addition();
+}
+}
+
+
+𝗤𝟭𝟳. 𝗘𝘅𝗮𝗺𝗽𝗹𝗲 𝗼𝗳 𝗽𝗮𝗿𝗮𝗺𝗲𝘁𝗿𝗶𝘇𝗲𝗱 𝗰𝗼𝗻𝘀𝘁𝗿𝘂𝗰𝘁𝗼𝗿.
+import java.util.*;
+class rect_ar
+{
+float len,br,ar;
+public rect_ar(float a,float b)
+{
+len=a;
+br=b;
+}
+public float rect_area()
+{
+return len*br;
+}
+}
+class para_cons
+{
+public static void main(String args[])
+{
+float l,b,area;
+Scanner sc=new Scanner(System.in);
+System.out.println("enter the length of the rectangle");
+l=sc.nextFloat();
+System.out.println("enter the length of the rectangle");
+b=sc.nextFloat();
+rect_ar r1=new rect_ar(l,b);
+area=r1.rect_area();
+System.out.println("Area of the rectangle is"+area);
+}
+}
+
+
+𝗤𝟭𝟴. 𝗔𝗿𝗿𝗮𝘆 𝗲𝘅𝗮𝗺𝗽𝗹𝗲.
+import java.util.*;
+class arr_ex
+{
+public static void main(String args[])
+{
+int arr[]=new int[100];
+int size;
+Scanner sc=new Scanner(System.in);
+System.out.println("Enter the length of the array\nsize=");
+size=sc.nextInt();
+System.out.println("Enter the elements of the array");
+for(int i=0;i<size;i++)
+{
+System.out.println("arr["+i+"]=");
+arr[i]=sc.nextInt();}
+System.out.println("Elements of the array are");
+for(int i=0;i<size;i++)
+{
+System.out.println("arr["+i+"]="+arr[i]);
+}
+}
+}
+
+
+𝗤𝟭𝟵. 𝗪𝗿𝗶𝘁𝗲 𝗮 𝗽𝗿𝗼𝗴𝗿𝗮𝗺 𝗶𝗻 𝗷𝗮𝘃𝗮: 𝘁𝗵𝗮𝘁 𝗿𝗲𝗮𝗱𝘀 𝗮𝗻 𝘂𝗻𝘀𝗽𝗲𝗰𝗶𝗳𝗶𝗲𝗱 𝗻𝘂𝗺𝗯𝗲𝗿 𝗼𝗳 𝗮𝗻 𝗶𝗻𝘁𝗲𝗴𝗲𝗿 𝗮𝗿𝗴𝘂𝗺𝗲𝗻𝘁 𝗳𝗿𝗼𝗺 𝘁𝗵𝗲 𝗰𝗼𝗺𝗺𝗮𝗻𝗱 𝗹𝗶𝗻𝗲. 𝗙𝗶𝗻𝗱 𝗺𝗲𝗮𝗻 𝗮𝗻𝗱 𝘀𝘁𝗮𝗻𝗱𝗮𝗿𝗱 𝗱𝗲𝘃𝗶𝗮𝘁𝗶𝗼𝗻. (𝗶𝗶)𝗣𝗿𝗶𝗻𝘁 𝘁𝗵𝗲 𝗮𝗯𝗼𝘃𝗲 𝗶𝗻𝗳𝗼𝗿𝗺𝗮𝘁𝗶𝗼𝗻.
+import java.util.*;
+class find_mean_sd{
+public static void main(String args[])
+{
+double num[]=new double[100];
+double temp,mean,sd,temp3,temp4;
+temp=0;
+temp3=0;
+Scanner sc=new Scanner(System.in);
+int length,i;
+System.out.print("Enter the limit,how many numbers do you want to enter\n length=");
+length=sc.nextInt();
+double temp2[]=new double[length];
+System.out.println("Enter the numbers");
+for(i=0;i<length;i++)
+{
+System.out.print("num["+i+"]=  ");
+num[i]=sc.nextFloat();
+}
+System.out.println("Entered numbers are");
+for(i=0;i<length;i++)
+{
+System.out.println("num["+i+"]=  "+num[i]);
+}
+for(i=0;i<length;i++)
+{
+temp=temp+num[i];
+}
+mean=temp/length;
+System.out.println("The mean is"+mean);
+for(i=0;i<length;i++)
+{
+temp2[i]=(num[i]-mean)*(num[i]-mean);
+temp3=temp3+temp2[i];}
+temp4=(temp3)/length;
+sd=Math.sqrt(temp4);
+System.out.println("The standard deviation is"+sd);
+}
+}
+
+
+𝗤𝟮𝟬. 𝗪𝗿𝗶𝘁𝗲 𝗮 𝗽𝗿𝗼𝗴𝗿𝗮𝗺 𝘁𝗼 𝗱𝗲𝗺𝗼𝗻𝘀𝘁𝗿𝗮𝘁𝗲 𝗺𝗲𝘁𝗵𝗼𝗱 𝗼𝘃𝗲𝗿𝗿𝗶𝗱𝗶𝗻𝗴.
+class A
+{
+int a,b;
+public A(int x,int y)
+{
+a=x;
+b=y;
+}
+public void add()
+{
+System.out.println("calling add function from the super class");
+System.out.println("Addition of the numbers "+a+" and "+b+" is"+(a+b));
+}
+}
+class B extends A
+{
+int c;
+public B(int x,int y,int z)
+{
+super(x,y);
+c=z;
+}
+public void add()
+{
+System.out.println("calling add function from the sub class");
+System.out.println("Addition of the numbers "+a+" ,"+b+" and"+c+" is"+(a+b+c));
+}
+}
+class overridedemo{
+public static void main(String args[])
+{
+A obj= new A(3,4);
+obj.add();
+B obj1=new B(4,5,6);
+obj1.add();
+}
+}
+
+
+𝗤𝟮𝟭. 𝗪𝗿𝗶𝘁𝗲 𝗮 𝗽𝗿𝗼𝗴𝗿𝗮𝗺 𝘁𝗼 𝗮𝗱𝗱 𝘁𝗼 𝗺𝗮𝘁𝗿𝗶𝗰𝗲𝘀.
+import java.util.*;
+class matrix_add
+{
+int a[][]=new int[3][3];
+int b[][]=new int[3][3];
+int i,j;
+Scanner sc=new Scanner(System.in);
+public void getelement()
+{
+System.out.println("Enter the elements of the first matrix");
+for(i=0;i<3;i++)
+{
+for(j=0;j<3;j++)
+{
+System.out.print("a["+(i+1)+"]["+(j+1)+"]=");
+a[i][j]=sc.nextInt();
+}
+}
+System.out.println("Enter the elements of the second matrix");
+for(i=0;i<3;i++)
+{
+for(j=0;j<3;j++)
+{
+System.out.print("a["+(i+1)+"]["+(j+1)+"]=");
+b[i][j]=sc.nextInt();
+}
+}
+}
+public void show()
+{
+System.out.println("The first matrix is");
+for(i=0;i<3;i++)
+{
+for(j=0;j<3;j++)
+{
+System.out.print("  a["+(i+1)+"]["+(j+1)+"]="+a[i][j]);
+}
+System.out.print("\n");
+}
+System.out.println("Enter the elements of the second matrix");
+for(i=0;i<3;i++)
+{
+for(j=0;j<3;j++)
+{
+System.out.print("  b["+(i+1)+"]["+(j+1)+"]="+b[i][j]);
+}
+System.out.print("\n");
+}
+}
+public void add()
+{
+System.out.println("The added matrix is\n");
+for(i=0;i<3;i++)
+{
+for(j=0;j<3;j++)
+{
+System.out.print("   c["+(i+1)+"]["+(j+1)+"]="+(a[i][j]+b[i][j]));
+}
+System.out.print("\n");
+}
+}
+}
+class mat_add_demo{
+public static void main(String args[])
+{
+matrix_add m=new matrix_add();
+m.getelement();
+m.show();
+m.add();
+}
+}
+
+
+𝗤𝟮𝟮. 𝗘𝘅𝗮𝗺𝗽𝗹𝗲 𝗼𝗳 𝗠𝘂𝗹𝘁𝗶-𝘁𝗵𝗿𝗲𝗮𝗱𝗶𝗻𝗴 𝗯𝘆 𝗰𝗿𝗲𝗮𝘁𝗲 𝗮 𝘁𝗵𝗿𝗲𝗮𝗱 𝘁𝗵𝗮𝘁 𝗶𝗺𝗽𝗹𝗲𝗺𝗲𝗻𝘁𝘀 𝗥𝘂𝗻𝗻𝗮𝗯𝗹𝗲 𝗶𝗻𝘁𝗲𝗿𝗳𝗮𝗰𝗲.
+class newthread implements Runnable
+{
+Thread t;
+newthread()
+{
+t=new Thread(this,"Demo Thread");
+System.out.println("Child thread: "+t);
+t.start();
+}
+public void run()
+{
+try{
+for(int i=5;i>0;i--)
+{
+System.out.println("Child thread: "+i);
+Thread.sleep(500);}
+}catch(InterruptedException e){
+System.out.println("Child interrupted.");
+}
+System.out.println("Exiting child thread");
+}
+}
+class threaddemo
+{
+public static void main(String args[])
+{
+new newthread();
+try
+{
+for(int i=5;i>0;i--)
+{
+System.out.println("Main thread: "+i);
+Thread.sleep(1000);
+}
+}catch(InterruptedException e){
+System.out.println("Child interrupted.");
+}
+System.out.println("Exiting child thread");
+}
+}
+
+
