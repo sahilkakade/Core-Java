@@ -1,4 +1,4 @@
-Q1. Write a program to find factorial of the number entered by the user.
+**Q1. Write a program to find factorial of the number entered by the user**
 import java.util.*;
 class factorial
 {
