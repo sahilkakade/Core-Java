@@ -2,7 +2,8 @@
 import java.util.*;
 class factorial
 {
-public static int facto(int num1){
+public static int facto(int num1)
+{
 if(num1==1)
 {
 return num1;
@@ -758,4 +759,304 @@ System.out.println("Exiting child thread");
 }
 }
 
+
+𝗤.𝟯𝟭. 𝗖𝗼𝗺𝗽𝗹𝗲𝘅 𝗡𝘂𝗺𝗯𝗲𝗿𝘀
+class complex
+{
+private double x,y;
+complex()
+{
+x=0;y=0;
+System.out.println(x+"+i"+y);
+}
+complex(double a,double b)
+{
+x=a;y=b;
+}
+complex add(complex cc)
+{//complex cc=new complex();
+cc.x=cc.x+x;cc.y=cc.y+y;
+return cc;
+}
+void disp()
+{
+System.out.println(x+"+i"+y);
+}
+}
+class complexprob
+{
+public static void main(String ar[])
+{
+complex c1,c2;
+c1=new complex(1,2);
+c2=new complex(2,3);
+c2=c2.add(c1);
+c2.disp();
+}
+}
+
+
+𝗤.𝟯𝟮.  𝗥𝗲𝗰𝘂𝗿𝘀𝗶𝗼𝗻
+class Factorial
+{
+int fact(int n)
+{
+int f;
+if(n==1)return 1;
+f=fact(n-1)*n;
+return f;
+}
+}
+class NCR
+{
+public static void main(String args[])
+{
+Factorial F=new Factorial();
+int n=5,r=3,ncr=0;
+ncr=F.fact(n)/(F.fact(r)*F.fact(n-r));
+System.out.println("n="+n+"tr="+r);
+System.out.println("nCr="+ncr);
+}
+}
+
+
+𝗤.𝟯𝟯. 𝗘𝘅𝗮𝗺𝗽𝗹𝗲 𝗼𝗳 𝗖𝗿𝗲𝗮𝘁𝗶𝗻𝗴 𝗼𝗳 𝗻𝗲𝘄 𝗳𝗶𝗹𝗲 𝗯𝘆 𝗖𝗵𝗲𝗰𝗸𝗶𝗻𝗴 𝘁𝗵𝗲 𝗲𝘅𝗶𝘀𝘁𝗲𝗻𝗰𝗲 𝗼𝗳 𝗮 𝗦𝗽𝗲𝗰𝗶𝗳𝗶𝗲𝗱.
+import java.io.*;
+public class CreateFile1 {
+public static void main(String[] args)throws IOException{
+File f;
+f=new File("myfile.txt");
+if(!f.exists()){
+f.createNewFile();
+System.out.println("New file \"myfile.tst\" has been created to the current directory");
+}
+}
+}
+
+𝗤:𝟯𝟰. 𝗜𝗻𝘁𝗲𝗿𝗳𝗮𝗰𝗲 𝗘𝘅𝗮𝗺𝗽𝗹𝗲
+import java.lang.*;
+import java.io.*;
+import java.util.*;
+interface MyInterface
+{int a=20, b=10;
+public void add();
+public void subtract();
+}
+class InterfaceExample implements MyInterface
+{public void add()
+{int c=a+b;
+System.out.println("Addition:"+c);
+}
+public void subtract()
+{int c=a-b;
+System.out.println("Subtraction:"+c);
+}
+public static void main(String arg[]) throws IOException
+{InterfaceExample ex=new InterfaceExample();
+ex.add();
+ex.subtract();
+}
+}
+
+
+𝗤.𝟯𝟱. 𝗘𝘅𝗮𝗺𝗽𝗹𝗲 𝗼𝗳 𝗣𝗮𝗰𝗸𝗮𝗴𝗲
+accbal.java : Inside mypack accbal class
+package mypack;
+public class accbal
+{
+String name;
+double bal;
+public accbal(String n,double b)
+{
+name=n;
+bal=b;
+}
+public void show()
+{
+if(bal>0)
+{
+System.out.println("The value of balance is"+bal);
+}
+}
+}
+import mypack.*;
+public class Testbal
+{
+public static void main(String args[])
+{
+accbal  test=new accbal("abc",89.9);
+test.show();
+}
+}
+
+
+𝗤.𝟯𝟲. 𝗘𝘅𝗮𝗺𝗽𝗹𝗲 𝗼𝗳 𝗦𝗼𝗿𝘁𝗶𝗻𝗴 𝗔𝗟𝗚𝗢𝗥𝗜𝗧𝗛𝗠
+public class SortData
+{public static int[] asce(int[] arr)
+{for(int i=0; i<arr.length-1; i++)
+{int index=i;
+for(int j=i+1; j<arr.length; j++)
+{if(arr[j]<arr[index])
+{index=j;
+int smallerNumber= arr[index];
+arr[index]=arr[i];
+arr[i]=smallerNumber;
+}
+}
+}
+}
+return arr;
+}
+public static int[] desc(int[] arr)
+{for(int i=0; i<arr.length-1; i++)
+{int index=i;
+for(int j=i+1; j<arr.length; j++)
+{if(arr[j]>arr[index])
+{index=j;
+}
+int largerNumber=arr[index];
+arr[index]=arr[i];
+arr[i]=largerNumber;
+}
+}
+return arr;
+}
+public static void main(String a[])
+{int arr1[]={10,34,2,56,7,67,88,42};
+int arr2[]=asce(arr1);
+System.out.print("asce() method gives array in ascending order");
+for(int i:arr2)
+{System.out.print(i);
+System.out.print(",");
+System.out.print("\n");
+System.out.print("desc() method gives array in descending order");
+int arr3[]=desc(arr1);
+for(int i:arr3)
+{System.out.print(i);
+System.out.print(",");
+}
+}
+}
+
+
+𝗤.𝟯𝟳.
+abstract class Sum
+{
+public abstract int sumOfTwo(int n1,int n2);
+public abstract int sumOfThree(int n1,int n2,int n3);
+public void disp(){
+System.out.println("Methods of class Sum");
+}
+}
+class AbstractDemo extends Sum{
+public int sumOfTwo(int num1,int num2){
+return num1+num2;
+}
+public int sumOfThree(int num1,int num2,int num3){
+return num1+num2+num3;
+}
+public static void main(String args[]){
+AbstractDemo ado=new AbstractDemo();
+System.out.println(ado.sumOfTwo(113,237));
+System.out.println(ado.sumOfThree(14,43,19));
+ado.disp();
+}
+}
+
+
+𝗤.𝟯𝟴.
+import java.util.Scanner;
+public class AddBin
+{
+public static void main(String[] args)
+{
+long binary1,binary2;
+int i=0,remainder=0;
+int[] sum=new int[20];
+Scanner in=new Scanner(System.in);
+System.out.println("Input first binary number:");
+binary1=in.nextLong();
+System.out.println("Input second binary number:");
+binary2=in.nextLong();
+while(binary1 !=0||binary2 !=0)
+{
+sum[i++]=(int)((binary1%10+binary2%10+remainder)%2);
+remainder=(int)((binary1%10+binary2%10+remainder)/2);
+binary1=binary1/10;
+binary2=binary2/10;
+}
+if(remainder !=0)
+{
+sum[i++]=remainder;
+}
+--i;
+System.out.println("sum of two binary numbers:");
+while(i>=0)
+{
+System.out.println(sum[i--]);
+}
+System.out.print("\n");
+}
+}
+
+
+𝗤.𝟯𝟵.
+public class BinaryConverter{
+public static void main(String[] args){
+for(int i=-3;i<4;i++){
+System.out.println(i+" :given integer");
+System.out.println(i+":"+toBinary(i));
+System.out.println(i+":"+Integer.toBinaryString(i));
+}
+}
+public static String toBinary(int base10Num){
+boolean isNeg=base10Num<0;
+base10Num=Math.abs(base10Num);
+String result="";
+while(base10Num>1){
+result=(base10Num%2)+result;
+base10Num/=2;
+}
+assert base10Num==0||base10Num==1:"value is not<=1:"+base10Num;
+result=base10Num+result;
+assert all0sAnd1s(result);
+if(isNeg)
+result = "-"+result;
+return result;
+}
+public static boolean all0sAnd1s(String val){
+assert val != null : "Failed preconditon all0sAnd1s. parameter cannot be null";
+boolean all= true;
+int i=0;
+char c;
+while(all && i<val.length()){
+c=val.charAt(i);
+all = c == '0' || c=='1';
+i++;
+}
+return all;
+}
+}
+
+
+𝗤.𝟰𝟬.
+public class ArrayMinMax
+{ public static void main(String[] args)
+{ int[] list={132,71,22,193,44,51,72,3};
+int indexOfMin = 0;
+for(int i=1;i<list.length;i++)
+{	if(list[i]<list[indexOfMin])
+{	indexOfMin = i;
+}
+}
+System.out.println("min of the list is :"+list[indexOfMin]+"and its index is"+indexOfMin);
+int indexOfMax = 0;
+for(int i=1;i<list.length;i++)
+{	if(list[i]>list[indexOfMax])
+{	indexOfMax = i;
+}
+}
+System.out.println("max of the list is :"+list[indexOfMax]+"and its index is"+indexOfMax);
+}
+}
 
