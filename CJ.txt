@@ -1,0 +1,37 @@
+Que:= Write a program to find factorial of the number entered by the user.
+Code:= 
+import java.util.*;
+class factorial
+{
+public static int facto(int num1){
+if(num1==1)
+{
+return num1;
+}
+else
+{
+return num1*facto(num1-1);
+}
+}
+}
+class testfact{
+public static void main(String args[])
+{
+int num,i,fact;
+fact=1;
+factorial f1=new factorial();
+Scanner sc=new Scanner(System.in);
+System.out.println("*******Factorial*******");
+System.out.println("Enter the number of which factorial do you want?");
+System.out.print("Num=");
+num=sc.nextInt();
+while(num<=0)
+{
+System.out.println("Enter the number that should be greater than zero");
+System.out.println("Number=");
+num=sc.nextInt();
+}
+fact=f1.facto(num);
+System.out.println("Factorial of  the number is"+fact);
+}
+}
